@@ -1,3 +1,22 @@
+incidents = []  # Stores All Incidents
+
+
+def add_incident():
+    name = input("Enter employee name: ")
+    incident_type = input("Enter incident type: ")
+    severity = input("Enter severity (Low/Medium/High): ")
+
+    incident = {
+        "name": name,
+        "type": incident_type,
+        "severity": severity,
+        "status": "Open"
+    }
+
+    incidents.append(incident)
+    print("Incident added successfully!")
+
+
 def main():
     while True:
         print("\nIncident Tracker")
@@ -10,7 +29,7 @@ def main():
         choice = input("Choose an option: ")
 
         if choice == "1":
-            print("Add Incident selected")
+            add_incident()
         elif choice == "2":
             print("View All Incidents selected")
         elif choice == "3":
